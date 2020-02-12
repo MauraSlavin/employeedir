@@ -1,15 +1,13 @@
 import React from 'react';
 import PageHdr from './components/PageHdr';
-import SearchBar from './components/SearchBar';
-import Table from './components/Table';
-import TableHdr from './components/TableHdr';
-import TableRow from './components/TableRow';
-
+import Search from './components/Search';
 
 function App() {
+  console.log("*** Started function 'App'");
   return (
     <div>
       <PageHdr />
+      <Search />
     </div>
   );
 }
