@@ -1,6 +1,6 @@
 import React from "react";
-// import {MDBTableBody} from 'mdbreact';
 
+// TableRows for the data rows in the table
 export default class TableRows extends React.Component {
   render(props) {
     console.log("props:");

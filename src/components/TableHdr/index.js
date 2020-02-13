@@ -1,7 +1,8 @@
 import React from "react";
 import ArrowIcon from "../ArrowIcon";
 
-
+// TableHdr is a component for the table header,
+//   including an ArrowIcon (^ or v) to sort by name.
 export default class TableHdr extends React.Component {
   render(props) {
   console.log("this.props");

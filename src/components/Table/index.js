@@ -1,10 +1,11 @@
 import React from "react";
-// import {MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import "./style.css";
 import TableHdr from "../TableHdr";
 import TableRows from "../TableRows";
 
-
+// the Table component has the table header
+//   (including the ^ or v to sort the employees by name)
+// and a row for each employee
 export default class Table extends React.Component {
   render(props) {
     console.log("Props in Table/index.js:");
@@ -20,7 +21,7 @@ export default class Table extends React.Component {
               alt = {this.props.alt}
               id = {this.props.id}
             />
-            
+
             <TableRows 
               employees = {this.props.employees}
             />

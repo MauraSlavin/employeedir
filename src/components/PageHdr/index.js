@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
+// PageHdr is a static page header with sub-header and instructions for user.
 export default class PageHdr extends React.Component {
   render() {
-    console.log("*** Started PageHdr/index.js");
     return (
       <div className="row h-150">
         <div className="col-12 my-auto">
