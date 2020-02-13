@@ -19,54 +19,7 @@ export default class Table extends React.Component {
             <TableRows 
               employees = {this.props.employees}
             />
-              {/* <tbody>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
-                </tr>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
-                </tr>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
 
-                </tr>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
-
-                </tr>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
-
-                </tr>
-                <tr>
-                  <td>image</td>
-                  <td>Person Smith</td>
-                  <td>xxx-xxx-xxxx</td>
-                  <td>email@gmail</td>
-                  <td>01-01-1995</td>
-
-                </tr>
-              </tbody> */}
           </table>
 
         </div>

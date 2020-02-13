@@ -4,6 +4,10 @@ import axios from "axios";
 import Table from "../Table";
 import SearchBar from "../SearchBar";
 
+// global to hold all employees, so we don't lose
+//   some after a filter.
+let allEmployees = [];
+
 export default class Search extends React.Component {
   // console.log("*** Started Search/index.js");
   state = {
@@ -11,21 +15,9 @@ export default class Search extends React.Component {
     employees: []
   }
 
-  //   employees: [
-  //     {
-  //       pic: "",
-  //       name: "no employees listed",
-  //       phone: "",
-  //       email: "",
-  //       dob: ""
-  //     }
-  //   ]
-  // }
-
-
   componentDidMount() {
-    // const url = "https://randomuser.me/api/?results=20&nat=us";
-    const url = "https://randomuser.me/api/?results=5&nat=us";
+    const url = "https://randomuser.me/api/?results=20&nat=us";
+    // const url = "https://randomuser.me/api/?results=5&nat=us";
     console.log("*** Start componentDidMount in Search/index.js");
     axios
       .get(url)
@@ -39,7 +31,7 @@ export default class Search extends React.Component {
 
           let emp = {
             pic: employee.picture.thumbnail,
-            name: employee.name.first + " " + employee.name.last,
+            name: employee.name.last + ', ' + employee.name.first,
             phone: employee.phone,
             email: employee.email,
             dob: date
@@ -51,6 +43,7 @@ export default class Search extends React.Component {
           employees: employees
         });
         console.log(employees);
+        allEmployees = employees;
       })
       .catch(err => {
         console.error(err);
@@ -70,20 +63,14 @@ export default class Search extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log("*** Started handleSubmit in Search/index.js");
+    const employees = allEmployees.filter( emp => emp.name.includes(this.state.search));
+    console.log("filtered");
+    console.log(employees);
 
-    // const url = "https://randomuser.me/api/?results=20&nat=us";
-    // axios.get(url)
-    //   .then((response) => {
-    //     console.log(response.data);
-    //     this.setState(
-    //       {
-    //        employees: response.data.results
-    //       }
-    //     )
-    //   })
-    //     .catch((err) => {
-    //       console.error(err);
-    //     });
+    this.setState({
+      employees: employees
+    });
+    
   };
 
   render() {
