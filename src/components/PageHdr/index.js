@@ -13,7 +13,7 @@ export default class PageHdr extends React.Component {
               Click on triangles to sort, or enter name to filter by name (or
               part of a name).
             </h3>
-            <p>(Search is case sensitive; search on empty displays all employees.)</p>
+            <p>(Search is case sensitive; search on empty displays all employees.  Click on triangle to search by name.)</p>
           </div>
         </div>
       </div>

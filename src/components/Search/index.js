@@ -16,7 +16,7 @@ export default class Search extends React.Component {
   }
 
   componentDidMount() {
-    const url = "https://randomuser.me/api/?results=20&nat=us";
+    const url = "https://randomuser.me/api/?results=30&nat=us";
     // const url = "https://randomuser.me/api/?results=5&nat=us";
     console.log("*** Start componentDidMount in Search/index.js");
     axios
@@ -26,13 +26,18 @@ export default class Search extends React.Component {
         console.log("results:");
         console.log(response.data.results);
         response.data.results.forEach(employee => {
+          const phone = employee.phone.slice(0,5) + " " +  employee.phone.slice(6, 14);
           let date = employee.dob.date;
-          date = date.slice(0, 10);
+          const month = date.slice(5, 7).replace(/^0+/, '');
+          const day = date.slice(8, 10). replace(/^0+/, '');
+          const year = date.slice(0, 4);
+          date = month + '/' + day + '/' + year;
+          // date = date.slice(5, 7) + "/" + date.slice(8, 10) + "/" + date.slice(0, 4);
 
           let emp = {
             pic: employee.picture.thumbnail,
             name: employee.name.last + ', ' + employee.name.first,
-            phone: employee.phone,
+            phone: phone,
             email: employee.email,
             dob: date
           };
