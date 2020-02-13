@@ -13,7 +13,10 @@ export default class Search extends React.Component {
   // console.log("*** Started Search/index.js");
   state = {
     search: "",
-    employees: []
+    employees: [],
+    src: "../downarrow.png",
+    id: "down",
+    alt: "v"
   };
 
   componentDidMount() {
@@ -60,27 +63,35 @@ export default class Search extends React.Component {
     document.addEventListener("click", this.handleClickOutside, true);
   }
 
-  orderEmployees = (employees, order) => {
-    alert(order);
-    console.log(employees);
-  };
-
   handleClickOutside = event => {
     console.log("*** Starting handleClickOutside");
-    // const domNode = ReactDOM.findDOMNode(this);
-    console.log(event.target.id == "downArrow");
 
     let employees = this.state.employees;
+    let src;
+    let alt;
+    let id;
     if (event.target.id === "down") {
       employees = employees.sort((a, b) => (a.name > b.name ? 1 : -1));
+      src = "../uparrow.png";
+      alt = "^";
+      id = "up"; 
     } else if (event.target.id === "up") {
       employees = employees.sort((a, b) => (a.name < b.name ? 1 : -1));
+      src = "../downarrow.png";
+      alt = "v";
+      id = "down"; 
+    } else {
+      return;
     }
 
     this.setState({
-      employees: employees
+      employees: employees,
+      alt: alt,
+      src: src,
+      id: id
     });
-    allEmployees = employees;
+
+    // allEmployees = employees;
   };
 
   handleSearchChg = event => {
@@ -119,7 +130,12 @@ export default class Search extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        <Table employees={this.state.employees} />
+        <Table 
+          employees={this.state.employees}
+          src = {this.state.src}
+          alt = {this.state.alt}
+          id = {this.state.id}
+        />
       </div>
     );
   }

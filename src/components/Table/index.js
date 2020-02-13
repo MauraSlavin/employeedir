@@ -15,7 +15,12 @@ export default class Table extends React.Component {
        
           <table>
 
-            <TableHdr />
+            <TableHdr 
+              src = {this.props.src}
+              alt = {this.props.alt}
+              id = {this.props.id}
+            />
+            
             <TableRows 
               employees = {this.props.employees}
             />

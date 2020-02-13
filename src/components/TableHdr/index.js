@@ -1,20 +1,21 @@
 import React from "react";
-import "./style.css";
+import ArrowIcon from "../ArrowIcon";
 
 
 export default class TableHdr extends React.Component {
-  render() {
+  render(props) {
+  console.log("this.props");
+  console.log(this.props);
     return (
       <thead>
         <tr>
           <th>Photo</th>
           <th>Name 
-            <input 
-              type="image" 
-              id="down" 
-              alt="v"
-              src="../downarrow.png">
-            </input>
+            <ArrowIcon 
+              src={this.props.src}
+              id={this.props.id}
+              alt={this.props.alt}
+            />
           </th>
           <th>Phone</th>
           <th>Email</th>
