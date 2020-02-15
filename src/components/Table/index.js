@@ -8,8 +8,6 @@ import TableRows from "../TableRows";
 // and a row for each employee
 export default class Table extends React.Component {
   render(props) {
-    console.log("Props in Table/index.js:");
-    console.log(this.props);
     return (
       <div className="row">
         <div className="col-12">

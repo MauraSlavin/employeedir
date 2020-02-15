@@ -5,8 +5,6 @@ import ArrowIcon from "../ArrowIcon";
 //   including an ArrowIcon (^ or v) to sort by name.
 export default class TableHdr extends React.Component {
   render(props) {
-  console.log("this.props");
-  console.log(this.props);
     return (
       <thead>
         <tr>

@@ -3,8 +3,6 @@ import React from "react";
 // TableRows for the data rows in the table
 export default class TableRows extends React.Component {
   render(props) {
-    console.log("props:");
-    console.log(this.props);
     return (
       <tbody>
       {this.props.employees.map((employee) => (
